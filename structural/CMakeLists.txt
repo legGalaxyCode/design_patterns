@@ -1,0 +1,12 @@
+#set(CMAKE_CXX_STANDARD 20)
+#
+#add_subdirectory(chain_of_responsibility)
+#add_subdirectory(command)
+#add_subdirectory(iterator)
+#add_subdirectory(mediator)
+#add_subdirectory(memento)
+#add_subdirectory(observer)
+#add_subdirectory(state)
+#add_subdirectory(strategy)
+#add_subdirectory(template_method)
+#add_subdirectory(visitor)
