@@ -49,7 +49,7 @@ public:
    * фабричным методом. Подклассы могут косвенно изменять эту бизнес-логику,
    * переопределяя фабричный метод и возвращая из него другой тип продукта.
    */
-   void demonstrateSword() const {
+   virtual void demonstrateSword() const {
        auto sword = createSword();
        std::cout << "This sword has " << sword->damage() << " damage!\n";
    }

@@ -13,6 +13,8 @@ using ThreadSafeSingletonRef = ThreadSafeSingleton&;
 class Singleton {
 public:
     friend class std::unique_ptr<Singleton>;
+    friend std::unique_ptr<Singleton> std::make_unique<Singleton>(uint32_t&);
+    friend std::unique_ptr<Singleton> std::make_unique<Singleton>(uint32_t&&);
 
     Singleton(Singleton&) = delete;
     void operator=(Singleton&) = delete;
@@ -32,7 +34,7 @@ SingletonPtr Singleton::instance_ = nullptr;
 
 SingletonCPtr Singleton::instance(uint32_t value) {
     if (!instance_)
-        instance_ = std::unique_ptr<Singleton>(new Singleton(value));
+        instance_ = std::make_unique<Singleton>(value);
     return instance_.get();
 }
 
